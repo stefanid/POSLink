@@ -1,0 +1,110 @@
+// Css file to make the case print look pretty
+.print-show
+{
+  display: none !important; visibility: hidden;
+}
+@media print
+{
+
+  h4
+  {
+    font-size:20px;
+  }
+  .print-hide
+  {
+    display: none !important; visibility: hidden;
+  }
+  .print-show
+  {
+    display: block !important;
+    visibility: visible;
+  }
+  .container-fluid
+  {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-top:0px;
+    margin-bottom: 0px;
+  }
+  .top-print
+  {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+  }
+  .top-location
+  {
+    margin:10px;
+  }
+  .top-print h2
+  {
+    position: absolute;
+    right: 30px;
+  }
+  .body-print
+  {
+    box-sizing: border-box;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+  }
+  .col-print
+  {
+    position: relative;
+    display: flex;
+    width: 100%;
+    margin: 10px;
+    flex-direction: column;
+  }
+  .cell-print
+  {
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+    flex-direction: column;
+    margin-top:10px;
+
+  }
+  .case-log-body
+  {
+    margin-bottom:20px;
+  }
+  .client-contact-print
+  {
+    margin-top:30px;
+  }
+  .cell-body-print
+  {
+    border-style: solid;
+    border-width: 2px;
+    border-color:rgba(0,0,0,1);
+    padding: 10px;
+    margin-top:10px;
+  }
+  .line-print
+  {
+    position: relative;
+    display: flex;
+    width: 100%;
+    align-items: center;
+  }
+  .line-print *
+  {
+    margin: 10px;
+  }
+  .case-log-font
+  {
+    font-size:18px;
+  }
+  main
+  {
+    padding-left: 0px;
+  }
+
+  .col-sm
+  {
+    flex-basis: auto !important;
+  }
+
+}

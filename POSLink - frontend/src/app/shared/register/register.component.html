@@ -1,0 +1,96 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-2 col-xl-3 d-none d-lg-block d-xl-block">&nbsp;</div>
+    <div class="col-lg-8 col-xl-6 col-md-12 col-sm-12 col-xs-12 white login_box">
+      <h3>
+        {{ 'n_clientname' | translate }}
+      </h3>
+      <br>
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="fas fa-user"></i>
+              </span>
+            </div>
+            <input formControlName="User_Username" name="User_Username" class="form-control" placeholder="Enter username" type="username">
+          </div>
+        </div>
+        <div *ngIf="registerForm.get('User_Username').errors && registerForm.get('User_Username').dirty" class="alert alert-danger">
+          {{ 'e_username' | translate }}
+        </div>
+
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="fas fa-user"></i>
+              </span>
+            </div>
+            <input formControlName="User_Email" name="User_Email" class="form-control" placeholder="Enter email" type="email">
+          </div>
+        </div>
+        <div *ngIf="registerForm.get('User_Email').errors && registerForm.get('User_Email').dirty" class="alert alert-danger">
+          {{ 'e_email' | translate }}
+        </div>
+
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="fas fa-user"></i>
+              </span>
+            </div>
+            <input formControlName="User_Name" name="User_Name" class="form-control" placeholder="Enter name" type="name">
+          </div>
+        </div>
+        <div *ngIf="registerForm.get('User_Name').errors && registerForm.get('User_Name').dirty" class="alert alert-danger">
+          {{ 'e_customer_name' | translate }}
+        </div>
+
+        <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="fa fa-phone"></i>
+                </span>
+              </div>
+              <input formControlName="User_Phone" name="User_Phone" class="form-control" placeholder="Enter phone" type="phone">
+            </div>
+          </div>
+          <div *ngIf="registerForm.get('User_Phone').errors && registerForm.get('User_Phone').dirty" class="alert alert-danger">
+            {{ 'n_customer_phone' | translate }}
+          </div>
+
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="fas fa-lock"></i>
+              </span>
+            </div>
+            <input formControlName="User_Password" name="User_Password" class="form-control" placeholder="Enter password" type="password">
+          </div>
+        </div>
+        <div *ngIf="registerForm.get('User_Password').errors && registerForm.get('User_Password').dirty" class="alert alert-danger">
+          {{ 'e_password' | translate }}
+        </div>
+
+
+        <button type="submit" class="first-color btn btn-icon-text" (click)="onRegister()">
+          {{ 'b_register' | translate }}
+          <i class="fas fa-sign-in-alt"></i>
+        </button>
+
+        <a style="float:right" class="first-color btn btn-icon-text" routerLink="/login" routerLinkActive="active">
+          {{ 'b_login' | translate }}
+          <i class="fas fa-sign-in-alt"></i>
+        </a>
+      </form>
+    </div>
+
+    <div class="col-lg-2 col-xl-3 d-none d-lg-block d-xl-block">&nbsp;</div>
+  </div>
+</div>

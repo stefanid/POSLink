@@ -1,0 +1,59 @@
+.topbar {
+  background-color: @white;
+  height: 86px;
+  padding: 25px 30px 30px 25px;
+}
+
+.topbar .dropdown {
+  position: absolute;
+  right:80px;
+}
+
+/* Mobile styles */
+@media only screen and (min-width: 0px) and (max-width: 575px) {
+  .topbar .dropdown {
+    right:20px;
+  }
+
+  .topbar .dropdown-menu {
+    left:-120px;
+  }
+}
+
+/* Button */
+
+.btn-primary {
+  background: @black;
+  border-color: @black;
+}
+
+.btn-primary:hover {
+  background: @first-color;
+  border-color: @first-color;
+}
+
+.btn-primary:focus {
+  box-shadow: none;
+  background: @first-color;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+  background: @first-color;
+  border-color: @first-color;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-primary.dropdown-toggle:focus {
+  background: @first-color;
+  border-color: @first-color;
+  box-shadow: none;
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+  background: @first-color;
+  color: @white;
+}
+
+.fa-user-circle {
+  margin-right: 5px;
+  margin-top: 2px;
+}

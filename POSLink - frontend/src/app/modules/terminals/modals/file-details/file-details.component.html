@@ -1,0 +1,40 @@
+<div class="modal fade" id="fileModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Recent Files</h5>
+                <button #closeModalBtn type="button" class="close" aria-label="Close" data-dismiss="modal" (click)="closeModal()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="dashboard_box">
+                    <div class="table-box">
+
+                      <div class="table-body">
+                        <div class="row table-header">
+                          <!-- <div class="col-xxs"><input [(checked)]="globalCheckboxValue" type="checkbox" #selectAll (change)="tickGlobalCheckbox(selectAll.checked)"></div> -->
+                          <div class="col d-none d-sm-inline col">Name</div>
+                          <div class="col d-none d-sm-inline col">Creation Date</div>                        
+                        </div>
+                        <div *ngFor="let file of files; let i = index">
+                          <div class="row">
+                            <div class="col d-none d-sm-inline col">{{ file.System_File_FileName }} </div>
+                            <div class="col d-none d-sm-inline col">{{ file.System_File_CreateDate }} </div>
+                                              
+                          </div>
+                          
+                        </div>
+                      </div>
+                    </div>
+                  
+                  </div>
+
+              </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" (click)="closeModal()">{{ 'b_close' | translate }}</button>
+               
+            </div>
+        </div>
+    </div>
+  </div>

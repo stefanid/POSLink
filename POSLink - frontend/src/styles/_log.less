@@ -1,0 +1,54 @@
+.log-header-padding { padding: 0px;}
+
+.log-header-controller .card {
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+}
+
+.log-header-fitting .card-header {
+  padding:0px;
+  height: 57px;
+}
+
+.log-headerrow {
+  display: block;
+  float: left;
+  height: 100%;
+  padding: 1rem;
+}
+
+.log-headerrow2 {
+  display: block;
+  float: left;
+  height: 100%;
+  padding: 1rem;
+  width: 50px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.log-header-controller .collapsed { border-bottom: 1px solid rgba(0,0,0,.125) }
+.log-header-controller .card-body { border-bottom: 1px solid rgba(0,0,0,.125) }
+
+.log-container {
+  width: 100%;
+  height: 400px; /* Dummy height just to show the scrollbar */
+  background-color: @white;
+  overflow-y: scroll;
+}
+
+.log-container::-webkit-scrollbar {
+  width: 25px;
+  background-color: @grey-light;
+}
+
+.log-container::-webkit-scrollbar-thumb {
+  background-color: @first-color;
+}
+
+@media only screen and (max-width: @sm-screen) {
+  .log-container {height: 200px;} /* Dummy height just to show the scrollbar */
+  .log-container::-webkit-scrollbar {width:12px;}
+  .log-headerrow2 {width: 35px; padding:0.5rem;}
+  .log-headerrow2 .icon_control {margin-top: 12px;}
+}

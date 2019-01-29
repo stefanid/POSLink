@@ -1,0 +1,39 @@
+<div class="modal fade" id="addErpModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Tilføj sync data</h5>
+        <button #closeModalBtn type="button" class="close" aria-label="Close" data-dismiss="modal" (click)="closeModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="addErpData">
+          <div class="form-group">
+            <label for="Client_ERPSyncCFG_TypeID">Report Type</label>
+            <select (change)="typeChanged($event.target.value)" formControlName="Client_ERPSyncCFG_TypeID" class="form-control">
+              <option *ngFor="let headerType of headerTypes; let i = index;" [value]="headerType.POS_Report_Data_TypeID">{{headerType.POS_Report_Data_TypeID}}</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="Client_ERPSyncCFG_ItemID">Report Type</label>
+            <select (change)="itemChanged($event.target.value)" formControlName="Client_ERPSyncCFG_ItemID" class="form-control">
+              <option *ngFor="let headerData of headerReportData; let i = index;" [value]="headerData.POS_Report_Data_ItemNr">{{headerData.POS_Report_Data_ItemName}} {{headerData.POS_Report_Data_ItemNr}}</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+              <label for="Client_ERPSyncCFG_AccountID">Account ID</label>
+              <input type="text" formControlName="Client_ERPSyncCFG_AccountID" class="form-control" placeholder="">
+            </div>
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="closeModal()">{{ 'b_close' | translate }}</button>
+        <button [disabled]="!addErpData.valid" class="first-color btn btn-icon-text" (click)="addNewErp()">{{ 'b_add' | translate }}</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,102 @@
+<div class="modal fade" id="editClientModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">{{'t_edit_client'|translate}}</h5>
+                <button #closeModalBtn type="button" class="close" aria-label="Close" data-dismiss="modal" (click)="closeModal()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="editClientForm">
+                    <div class="form-group">
+                        <label for="Client_Name">{{ 'customerPage.n_customer_name' | translate }}</label>
+                        <input type="text" formControlName="Client_Name" class="form-control">
+                        <div *ngIf="editClientForm.get('Client_Name').errors && editClientForm.get('Client_Name').dirty" class="alert alert-danger">
+                            {{ 'customerPage.e_customer_name' | translate }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Client_Adr1">{{ 'customerPage.n_customer_address' | translate }}</label>
+                        <input type="text" formControlName="Client_Adr1" class="form-control" placeholder="">
+                        <div *ngIf="editClientForm.get('Client_Adr1').errors && editClientForm.get('Client_Adr1').dirty" class="alert alert-danger">
+                            {{ 'customerPage.n_customer_address' | translate }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Client_Adr2">{{ 'customerPage.n_customer_address2' | translate }}</label>
+                        <input type="text" formControlName="Client_Adr2" class="form-control" placeholder="">
+                        <div *ngIf="editClientForm.get('Client_Adr2').errors && editClientForm.get('Client_Adr2').dirty" class="alert alert-danger">
+                            {{ 'customerPage.n_customer_address2' | translate }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Client_Adr3">{{ 'customerPage.n_customer_address3' | translate }}</label>
+                        <input type="text" formControlName="Client_Adr3" class="form-control" placeholder="">
+                        <div *ngIf="editClientForm.get('Client_Adr3').errors && editClientForm.get('Client_Adr3').dirty" class="alert alert-danger">
+                            {{ 'customerPage.n_customer_address3' | translate }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Country_UID">{{ 'customerPage.n_customer_country' | translate }}</label>
+                        <select formControlName="Country_UID" class="form-control">
+                            <option *ngFor="let country of countries; let i = index;" [selected]="country.Utility_Country_UID === selectedClient.Utility_Country_UID"
+                                [value]="country.Utility_Country_UID">{{country.Utility_Country_Name}}</option>
+                        </select>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label for="Client_City">{{ 'customerPage.n_customer_city' | translate }}</label>
+                        <input type="text" formControlName="Client_City" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Client_PostalCode">{{ 'customerPage.n_customer_zip' | translate }}</label>
+                        <input type="text" formControlName="Client_PostalCode" class="form-control" placeholder="">
+                        <div *ngIf="editClientForm.get('Client_PostalCode').errors && editClientForm.get('Client_PostalCode').dirty" class="alert alert-danger">
+                            {{ 'customerPage.e_zipcode' | translate }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Client_VAT">{{ 'customerPage.n_customer_vat' | translate }}</label>
+                        <input type="text" formControlName="Client_VAT" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Client_EAN">{{ 'customerPage.n_customer_ean' | translate }}</label>
+                        <input type="text" formControlName="Client_EAN" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Client_InvoiceEmail">{{ 'customerPage.n_customer_email' | translate }}</label>
+                        <input type="text" formControlName="Client_InvoiceEmail" class="form-control" placeholder="">
+                        <div *ngIf="editClientForm.get('Client_InvoiceEmail').errors && editClientForm.get('Client_InvoiceEmail').dirty" class="alert alert-danger">
+                            {{ 'customerPage.n_customer_email' | translate }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Client_PUID">{{ 'customerPage.n_customer_child' | translate }}</label>
+                        <select formControlName="Client_PUID" class="form-control">
+                            <option *ngFor="let child of children; let i = index;" [value]="child.System_Client_UID">{{child.System_Client_Name}}</option>
+                        </select>
+                    </div>
+
+                    <div *ngIf="editClientForm.errors?.emailValidate" class="alert alert-danger">
+                        E-mail is not valid
+                      </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" (click)="closeModal()">{{ 'b_close' | translate }}</button>
+                <button [disabled]="!editClientForm.valid" class="first-color btn btn-icon-text" (click)="editClients()">{{ 'b_save' | translate }}</button>
+            </div>
+        </div>
+    </div>
+</div>

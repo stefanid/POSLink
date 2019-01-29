@@ -1,0 +1,45 @@
+<div class="modal fade" id="addTerminalModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">{{'customerPage.t_new_terminal'|translate}}</h5>
+        <button #closeModalBtn type="button" class="close" aria-label="Close" data-dismiss="modal" (click)="closeModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="addTerminalForm">
+          <div class="form-group">
+            <label for="Terminal_Name">{{ 'n_terminal_name' | translate }}</label>
+            <input type="text" formControlName="Terminal_Name" class="form-control" placeholder="">
+            <div *ngIf="addTerminalForm.get('Terminal_Name').errors && addTerminalForm.get('Terminal_Name').dirty" class="alert alert-danger">
+              {{ 'customerPage.e_customer_name' | translate }}
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="Clients">{{ 'n_client' | translate }}</label>
+            <select class="form-control" formControlName="Client_UID">
+              <option  *ngFor="let client of clients" [value]="client.System_Client_UID">{{client.System_Client_Name}}</option>
+            </select>
+          </div>
+
+
+          <div class="form-group">
+              <label for="Terminal_TypeID">{{ 'n_terminal_type' | translate }}</label>
+              <select class="form-control" formControlName="Terminal_TypeID">
+                <option [value]="10">Casio-Android</option>
+                <option [value]="20">Casio-qtxxxx</option>
+                <option [value]="30">TwinPOS</option>
+              </select>
+            </div>
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="closeModal()">{{ 'b_close' | translate }}</button>
+        <button [disabled]="!addTerminalForm.valid" class="first-color btn btn-icon-text" (click)="addNewTerminal()">{{ 'b_add' | translate }}</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-2 col-xl-3 d-none d-lg-block d-xl-block">&nbsp;</div>
+    <div class="col-lg-8 col-xl-6 col-md-12 col-sm-12 col-xs-12 white login_box">
+      <h3>
+        {{ 'n_clientname' | translate }}
+      </h3>
+      <br>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="fas fa-user"></i>
+              </span>
+            </div>
+            <input formControlName="User_Email" name="User_Email" class="form-control" placeholder="Enter email" type="email">
+          </div>
+        </div>
+        <div *ngIf="loginForm.get('User_Email').errors && loginForm.get('User_Email').dirty" class="alert alert-danger">
+          {{ 'e_username' | translate }}
+        </div>
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="fas fa-lock"></i>
+              </span>
+            </div>
+            <input formControlName="User_Password" name="User_Password" class="form-control" placeholder="Password" type="password">
+          </div>
+        </div>
+        <div *ngIf="loginForm.get('User_Password').errors && loginForm.get('User_Password').dirty" class="alert alert-danger">
+          {{ 'e_password' | translate }}
+        </div>
+        <button type="submit" class="first-color btn btn-icon-text" (click)="onlogin()">
+          {{ 'b_login' | translate }}
+          <i class="fas fa-sign-in-alt"></i>
+        </button>
+        
+         
+        
+
+      </form>
+
+    </div>
+
+    <div class="col-lg-2 col-xl-3 d-none d-lg-block d-xl-block">&nbsp;</div>
+  </div>
+</div>

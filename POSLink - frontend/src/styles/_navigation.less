@@ -1,0 +1,83 @@
+.sidebar{
+    width: 250px;
+    position: fixed;
+    top:0;
+    bottom:auto;
+    height: 100%;
+    background-color: @grey-very-dark;
+}
+main{
+    padding-left: 250px;
+}
+
+.navbar-nav {
+  width: 100%;
+
+}
+
+.navbar-nav a {
+ color: @grey-light;
+ transition: background-color 0.2s;
+}
+.navbar-nav a:hover {
+  color: @white;
+  background: @grey-dark;
+
+ }
+
+.nav-pills .nav-link {
+  border-radius: 0rem !important;
+  padding-left: 20px !important;
+}
+
+.nav-pills .nav-item .nav-link.active  {
+  background: @grey-dark;
+}
+
+.navbar-brand-move {
+  padding-top:30px;
+  padding-left:20px;
+}
+
+/* Phones and smaller Ipads */
+@media only screen and (max-width: @lg-screen) {
+  .nav_mob {
+    position: relative;
+    display: block;
+    background: @grey-very-dark;
+    height: 55px;
+    width: 100%;
+    padding: 10px;
+    z-index: 10;
+  }
+
+  .sidebar {
+   position: relative;
+   display: block;
+   overflow-x: hidden;
+   z-index: 9;
+   width: 100%;
+   transition: 0.2s;
+  }
+
+  .navbar-collapse {
+    background: @grey-very-dark;
+  }
+
+  main {
+    padding-left: 0px;
+    position: relative;
+    display: block;
+    // z-index: 0;
+  }
+
+  .navbar-toggler-icon {
+    display: inline-block;
+  }
+
+}
+.nav-icon{
+  width:20px;
+  height: 20px;
+  padding-right: 5px;
+}

@@ -1,0 +1,66 @@
+<div class="dashboard_box">
+  <div class="table-box">
+    <div class="table-top">
+      <div class="row">
+        <div class="col-sm">
+          <h4>Terminals</h4>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-6">
+
+          <!-- <button [disabled]="checkedEquipments.length<1" type="button" class="red btn btn-icon-text btn-sm" data-toggle="modal" data-target="#confirmDeleteModal" (click)="callBulkDelete()">
+              <span class="fa fa-trash-alt"></span>
+            </button> -->
+        </div>
+        <div class="col-6 text-right">
+          <button type="button" *ngIf="admin"  class="first-color btn btn-icon-text btn-sm" data-toggle="modal" data-target="#addTerminalModal">
+            <span class="fa fa-plus"></span>New terminal
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="table-body">
+      <div class="row table-header">
+        <!-- <div class="col-xxs"><input [(checked)]="globalCheckboxValue" type="checkbox" #selectAll (change)="tickGlobalCheckbox(selectAll.checked)"></div> -->
+        <div class="col d-none d-sm-inline col">Terminal</div>
+        <div class="col d-none d-sm-inline col">Client</div>
+        <div class="col d-none d-sm-inline col">Create Date</div>
+        <div class="col d-none d-sm-inline col">Last Synced</div>
+        <div class="col d-none d-sm-inline col">Type</div>
+        <div class="col">&nbsp;</div>
+      </div>
+      <div *ngFor="let terminal of terminals; let i = index">
+        <div class="row">
+          <div class="col d-none d-sm-inline col">{{ terminal.Terminal_Name }} </div>
+          <div class="col d-none d-sm-inline col">{{ terminal.System_Client_Name }} </div>
+          <div class="col d-none d-sm-inline col">{{ terminal.Terminal_CreateDate }} </div>
+          <div class="col d-none d-sm-inline col">{{ terminal.Terminal_Connection_LastSync }} </div>
+          <div class="col d-none d-sm-inline col">{{ terminal.Type }} </div>
+          <div class="col ">
+            <i>
+              <a class="btn-icon" *ngIf="admin" (click)="downloadConfig(terminal)">
+                <span class="first-color-text fa fa-download" area-hidden="true"></span>
+              </a>
+              <a class="btn-icon" *ngIf="admin || user" (click)="selectTerminal(terminal)" data-toggle="modal"
+                data-target="#fileModal">
+                <span class="first-color-text fa fa-archive" area-hidden="true"></span>
+              </a>
+              <a class="btn-icon" *ngIf="admin" (click)="deleteTerminal(terminal)">
+              <span class="red-text fa fa-trash-alt" area-hidden="true"></span>
+            </a>
+             
+            </i>
+          </div>
+
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+<app-file-details-modal [selectedTerminal]="selectedTerminal" (success)="onSuccessAddOrUpdate($event)"></app-file-details-modal>
+<app-add-terminal-modal (success)="onSuccessAddOrUpdate($event)"></app-add-terminal-modal>

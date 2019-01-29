@@ -1,0 +1,40 @@
+<nav class="nav_mob d-xl-none d-lg-none d-md-block print-hide">
+  <a class="navbar-brand" routerLink="/">
+    <h3 class="white-text">
+      POSLink
+    </h3>
+  </a>
+  <button class="navbar-toggler navbar-dark float-right" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+    aria-expanded="false" aria-label="Toggle navigation" type="button">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+</nav>
+<nav class="sidebar navbar-expand-lg print-hide" id="navigation">
+  <a class="navbar-brand navbar-brand-move d-none d-sm-none d-md-none d-xl-block d-lg-block" routerLink="/">
+    <h3 class="white-text">
+      POSLink
+    </h3>
+  </a>
+  <div class="navbar-collapse collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto nav-pills flex-column">
+      <li class="nav-item" data-toggle="collapse" data-target="#navbarSupportedContent" (click)="navpreventClose($event)">
+        <a routerLink="/dashboard" class="nav-link" routerLinkActive="active">
+          <i class="fas fa-home"></i> {{ 'n_dashboard' | translate }}
+        </a>
+      </li>
+
+      <li class="nav-item" data-toggle="collapse" data-target="#navbarSupportedContent" (click)="navpreventClose($event)">
+        <a routerLink="/terminal" class="nav-link" routerLinkActive="active">
+          <i class="fa fa-desktop"></i> {{ 'n_terminals' | translate }}
+        </a>
+      </li>
+      <li class="nav-item" data-toggle="collapse" data-target="#navbarSupportedContent" (click)="navpreventClose($event)">
+        <a routerLink="/kunder" class="nav-link" routerLinkActive="active">
+          <i class="fa fa-users"></i> {{ 'n_clients' | translate }}
+        </a>
+      </li>
+    </ul>
+
+  </div>
+
+</nav>

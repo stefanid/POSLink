@@ -1,0 +1,89 @@
+.card {
+  border:none;
+  border-radius: 0px;
+  box-shadow: 1px 1px 1px 3px #eeeeee;
+}
+
+.card .card-header {
+  background: white;
+  cursor: pointer;
+}
+
+.card .card-body {
+  min-height: 200px;
+}
+
+.card .card-header p {
+  margin:0px;
+  padding:0px;
+}
+
+.select-container{
+  float: right;
+}
+
+.card .card-header .badge {
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.card .card-header .badge_icon {
+  margin-top:12px;
+}
+
+.card-header-button h4 {
+  margin-top:7px;
+}
+
+.card-header .icon_arrow {
+  transition: .3s transform ease-in-out;
+  transform: rotate(360deg);
+  margin-top: 3px;
+}
+
+.card .collapsed .icon_arrow {
+  transform: rotate(270deg);
+  margin-top: 3px;
+}
+
+// .card-header .icon_arrow2 {
+//   transition: .3s transform ease-in-out;
+//   transform: rotate(270deg);
+//   margin-top: 3px;
+// }
+
+.card .collapsed .icon_arrow2 {
+  transform: rotate(360deg);
+  margin-top: 3px;
+}
+
+.collapsed {
+  border-bottom: none;
+}
+
+
+.wrapper{
+  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+  padding:24px;
+  border-radius: 2px;
+  background-color:  @white;
+
+  h4{
+    padding-bottom: 1rem;
+  }
+}
+.wrapper-small{
+  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+  padding:24px;
+  margin-bottom:1.7em;
+  border-radius: 2px;
+  background-color:  @white;
+
+  h4{
+    padding-bottom: 1rem;
+    a{
+      font-size: 0.7em;
+      float: right;
+    }
+  }
+}

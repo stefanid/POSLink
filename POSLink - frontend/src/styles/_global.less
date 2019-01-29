@@ -1,0 +1,138 @@
+body {
+  background-color: @grey-very-light;
+}
+p{
+  margin: 0;
+}
+.selectMargin
+{
+  margin-top: 20px;
+}
+
+select{
+  padding: 0.28rem;
+  border: solid 1px @grey-very-light;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.container-fluid {
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-top:30px;
+  margin-bottom: 30px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+.alert-container{
+    position: fixed;
+    bottom:5px;
+    width:100%;
+    padding:0 7px;
+
+    .alert {
+        margin:5px auto;
+        max-width: 400px;
+    }
+}
+
+.confirm-alert-container {
+  position: absolute;
+  bottom:50vh;
+  max-width:100%;
+  width:400px;
+
+  .confirm-alert {
+    background-color: white;
+    padding:7px;
+  }
+}
+
+.badge-primary {
+  background: @first-color;
+  padding:5px;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently */
+}
+
+/* Buttons */
+.btn {
+  padding: .21rem .4rem;
+}
+
+.eror404 {
+  text-align: center;
+}
+
+.eror404 img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  margin-top:70px;
+}
+
+.font-sm{
+  font-size:@font-sm;
+}
+.display-inline{
+  display: inline;
+}
+
+button,select,
+button:active,
+button:focus,
+button:hover,
+.btn,
+.btn:active,
+.btn:focus,
+.btn:hover{
+    outline:none !important;
+}
+
+.ngx-datepicker-container[_ngcontent-c2] .ngx-datepicker-input[_ngcontent-c2] {
+  width: 100% !important;
+  border: 0px !important;
+  margin:0px !important;
+  padding: 2px 0px 2px 0px !important;
+  cursor: pointer;
+  font-size: 1rem !important;
+}
+
+.col-xxs {
+  padding-left:15px;
+}
+.col-xs {
+  padding-left:15px;
+  min-width:60px;
+}
+.col-flex{
+  padding-left:15px;
+  margin-top: 7px;
+  margin-right:5px;
+  p{
+    display: block;
+  }
+  select{
+    display: inline;
+    max-width: 260px;
+    margin-right:5px;
+  }
+}
+
+.minify-text
+{
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

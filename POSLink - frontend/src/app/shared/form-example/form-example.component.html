@@ -1,0 +1,66 @@
+<div [hidden]="submitted">
+  <form (ngSubmit)="onSubmit()" [formGroup]="form" #heroForm="ngForm">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" formControlName="name" class="form-control" id="name" required [(ngModel)]="model.name" name="name" placeholder="write your name here">
+    </div>
+    <div *ngIf="form.get('name').errors && form.get('name').dirty" class="alert alert-danger">
+        Name is required
+    </div>
+    <div class="form-group">
+      <label for="alterEgo">Alter Ego</label>
+      <input type="text" formControlName="alterEgo" class="form-control" id="alterEgo" [(ngModel)]="model.alterEgo" name="alterEgo" placeholder="add an alter Ego, for example SuperJuice">
+    </div>
+    <div *ngIf="form.get('alterEgo').errors && form.get('alterEgo').dirty" class="alert alert-danger">
+        alterEgo is required
+    </div>
+    <div class="form-group">
+      <label for="power">Hero Power</label>
+      <select formControlName="power" class="form-control" id="power" required [(ngModel)]="model.power" name="power">
+        <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+      </select>
+    </div>
+    <div *ngIf="form.get('power').errors && form.get('power').dirty" class="alert alert-danger">
+        Power is required
+    </div>
+    <div class="form-group">
+        <label for="sidekick">Sidekick</label>
+        <select formControlName="sidekick" class="form-control" id="sidekick" required [(ngModel)]="model.sidekick" name="power">
+            <option *ngFor="let kick of sidekicks" [value]="kick">{{kick}}</option>
+        </select>
+    </div>
+    <div *ngIf="form.get('sidekick').errors && form.get('sidekick').dirty" class="alert alert-danger">
+        Did you really pick {{ model.sidekick }}?
+    </div>
+    <div class="form-group">
+        <label for="name">Your superhero mail</label>
+        <input type="text" formControlName="email" class="form-control" id="email" required [(ngModel)]="model.email" name="email" placeholder="Every hero has a superhero mail, don't you?">
+    </div>
+    <div *ngIf="form.get('email').errors && form.get('email').dirty" class="alert alert-danger">
+        Every hero has a superhero mail!
+    </div>
+    <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button>
+    <button type="button" class="first-color btn btn-icon-text" (click)="newHero(); heroForm.reset()">New Hero</button>
+  </form>
+</div>
+<div [hidden]="!submitted">
+  <h2>You submitted the following:</h2>
+  <div class="row">
+    <div class="col-sm">Name</div>
+    <div class="col-sm pull-left">{{ model.name }}</div>
+  </div>
+  <div class="row">
+    <div class="col-sm">Alter Ego</div>
+    <div class="col-sm pull-left">{{ model.alterEgo }}</div>
+  </div>
+  <div class="row">
+    <div class="col-sm">Hero power</div>
+    <div class="col-sm pull-left">{{ model.power }}</div>
+  </div>
+  <div class="row">
+      <div class="col-sm">Sidekick</div>
+      <div class="col-sm pull-left">{{ model.sidekick }}</div>
+    </div>
+  <br>
+  <button class="first-color btn btn-icon-text" (click)="submitted=false">Edit</button>
+</div>

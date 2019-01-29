@@ -1,0 +1,78 @@
+<div class="dashboard_box">
+  <div class="table-box">
+    <div class="table-top">
+      <div class="row">
+        <div class="col-sm">
+          <h4>Clients</h4>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-6">
+
+          <!-- <button [disabled]="checkedEquipments.length<1" type="button" class="red btn btn-icon-text btn-sm" data-toggle="modal" data-target="#confirmDeleteModal" (click)="callBulkDelete()">
+              <span class="fa fa-trash-alt"></span>
+            </button> -->
+        </div>
+          <div class="col-6 text-right" *ngIf="admin" >
+            <button  type="button" class="first-color btn btn-icon-text btn-sm"  data-toggle="modal" data-target="#addClientsModal">
+              <span class="fa fa-plus"></span>New client
+            </button>
+          </div>
+
+      </div>
+    </div>
+    <div class="table-body">
+      <div class="row table-header">
+        <!-- <div class="col-xxs"><input [(checked)]="globalCheckboxValue" type="checkbox" #selectAll (change)="tickGlobalCheckbox(selectAll.checked)"></div> -->
+        <div class="col d-none d-sm-inline col">ID</div>
+        <div class="col d-none d-sm-inline col">Name</div>
+        <div class="col d-none d-sm-inline col">Address 1</div>
+        <div class="col d-none d-sm-inline col">Address 2</div>
+        <div class="col d-none d-sm-inline col">Address 3</div>
+        <div class="col d-none d-sm-inline col">City</div>
+        <div class="col d-none d-sm-inline col">Status</div>
+        <div class="col d-none d-sm-inline col">Locations</div>
+        <div class="col">&nbsp;</div>
+      </div>
+      <div *ngFor="let client of clients; let i = index">
+        <div class="row">
+          <div class="col d-none d-sm-inline col">{{ client.System_Client_ID }} </div>
+          <div class="col d-none d-sm-inline col">{{ client.System_Client_Name }} </div>
+          <div class="col d-none d-sm-inline col">{{ client.System_Client_Adr1 }} </div>
+          <div class="col d-none d-sm-inline col">{{ client.System_Client_Adr2 }} </div>
+          <div class="col d-none d-sm-inline col">{{ client.System_Client_Adr3 }} </div>
+          <div class="col d-none d-sm-inline col">{{ client.System_Client_City }} </div>
+          <div class="col d-none d-sm-inline col">{{ client.System_Client_Status }} </div>
+          <div class="col d-none d-sm-inline col">{{ client.Parent_Name }} </div>
+          <div class="col">
+            <i>
+
+              <a class="btn-icon" (click)="selectClient(client)" data-toggle="modal" *ngIf="admin" data-target="#editClientModal">
+                <span class="first-color-text fa fa-pencil-alt"></span>
+              </a>
+              <a class="btn-icon" *ngIf="admin" (click)="disableClient(client)">
+                <span class="fa fa-check-circle btnsDisable"></span>
+              </a>
+              <a class="btn-icon" *ngIf="admin" (click)="selectClient(client)" data-toggle="modal" data-target="#erpModal">
+                <img class="eConomicPng" src="../assets/images/e-conomic.png"/>
+              </a>
+            </i>
+          </div>
+
+        </div>
+        <div class="detail-expand" class="collapse" id="collapse{{i}}">
+          <div class="row">
+            <div class="col">Client</div>
+            <div class="col">{{ client.System_Client_Name }} </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<app-add-client-modal (success)="onSuccessAddOrUpdate($event)"></app-add-client-modal>
+<app-edit-client-modal [selectedClient]="selectedClient" (success)="onSuccessAddOrUpdate($event)"></app-edit-client-modal>
+<app-erp  [selectedClient]="selectedClient" (success)="onSuccessAddOrUpdate($event)"></app-erp>
+<!-- <app-confirm-action-alert  [alertMsg]="'clientsPage.t_confirm_client_disable' | translate" [alertData]="disableClient.System_Client_ID" (confirmBulkDelete)="bulkDelete($event)"></app-confirm-action-alert> -->
