@@ -1,0 +1,8 @@
+
+node_modules/
+
+controllers/TerminalController\.js
+
+helpers/terminalService\.js
+
+routes/TerminalRoute\.js
