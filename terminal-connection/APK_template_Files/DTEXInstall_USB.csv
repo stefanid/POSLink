@@ -1,0 +1,7 @@
+[Version 1.02]
+CopyFile,/mnt/usb1_storage/DTEX_APL.zip,/mnt/sdcard
+UnZip,/mnt/sdcard/DTEX_APL.zip
+SilentInstall,/mnt/sdcard/DTEX_APL
+DeleteDir,/mnt/sdcard/DTEX_APL
+DeleteFile,/mnt/sdcard/DTEX_APL.zip
+CopyFile,/mnt/usb1_storage/dtex_setup.sql,/mnt/sdcard
