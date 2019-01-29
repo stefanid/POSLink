@@ -1,0 +1,35 @@
+
+Log Entry : 2:40:01 PM Tuesday, January 8, 2019
+**
+Username: LP001009, Password: 2q4afox, IPAddress: 172.22.20.81
+-------------------------------
+
+Log Entry : 1:11:17 PM Thursday, January 10, 2019
+**
+Username: LP001009, Password: 2q4afox, IPAddress: 172.22.20.81
+-------------------------------
+
+Log Entry : 1:12:16 PM Thursday, January 10, 2019
+**
+Username: LP001009, Password: 2q4afox, IPAddress: 172.22.20.81
+-------------------------------
+
+Log Entry : 3:50:07 PM Tuesday, January 15, 2019
+**
+Username: LP001009, Password: 2q4afox, IPAddress: 172.22.20.81
+-------------------------------
+
+Log Entry : 3:50:20 PM Tuesday, January 15, 2019
+**
+Username: LP001009, Password: 2q4afox, IPAddress: 172.22.20.81
+-------------------------------
+
+Log Entry : 3:51:04 PM Tuesday, January 15, 2019
+**
+Username: LP001009, Password: 2q4afox, IPAddress: 172.22.20.81
+-------------------------------
+
+Log Entry : 3:57:10 PM Tuesday, January 15, 2019
+**
+Username: LP001009, Password: 2q4afox, IPAddress: 172.22.20.81
+-------------------------------
